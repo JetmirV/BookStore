@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33712.159
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore", "BookStore\BookStore.csproj", "{AA77A9B7-6B9C-4270-BCA0-DDEFE8CDA243}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CartApi", "CartApi\CartApi.csproj", "{2DD14079-64FB-42F8-A5DC-52899CF73FBB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA77A9B7-6B9C-4270-BCA0-DDEFE8CDA243}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA77A9B7-6B9C-4270-BCA0-DDEFE8CDA243}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA77A9B7-6B9C-4270-BCA0-DDEFE8CDA243}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA77A9B7-6B9C-4270-BCA0-DDEFE8CDA243}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DD14079-64FB-42F8-A5DC-52899CF73FBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DD14079-64FB-42F8-A5DC-52899CF73FBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DD14079-64FB-42F8-A5DC-52899CF73FBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DD14079-64FB-42F8-A5DC-52899CF73FBB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {69A9D317-CE8C-4F2B-A78C-C25E82350429}
+	EndGlobalSection
+EndGlobal
