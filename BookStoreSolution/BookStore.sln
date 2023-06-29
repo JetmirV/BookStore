@@ -7,17 +7,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore", "BookStore\Book
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CartApi", "CartApi\CartApi.csproj", "{2DD14079-64FB-42F8-A5DC-52899CF73FBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundApps", "BackgroundApps\BackgroundApps.csproj", "{536C5C42-30C0-4459-9F38-ADA39C179B62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackgroundApps", "BackgroundApps\BackgroundApps.csproj", "{536C5C42-30C0-4459-9F38-ADA39C179B62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailService", "EmailService\EmailService.csproj", "{FB8FC7D0-5515-44AC-B2B3-AE823A730063}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailService", "EmailService\EmailService.csproj", "{FB8FC7D0-5515-44AC-B2B3-AE823A730063}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderApi", "OrderApi\OrderApi.csproj", "{E7E87C92-646E-41B2-B64F-E9545E658D5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderApi", "OrderApi\OrderApi.csproj", "{E7E87C92-646E-41B2-B64F-E9545E658D5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{5004B4FB-CED3-42F5-94E8-A6FBEEE87BA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{5004B4FB-CED3-42F5-94E8-A6FBEEE87BA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{9F840859-E724-432B-BC58-2DBEB1316419}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{9F840859-E724-432B-BC58-2DBEB1316419}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{B5C4C2AF-F0E5-4D48-9F6C-C8065151E375}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{B5C4C2AF-F0E5-4D48-9F6C-C8065151E375}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountApi", "AccountApi\AccountApi.csproj", "{4270C803-25BD-4BD6-A734-499156115609}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{B5C4C2AF-F0E5-4D48-9F6C-C8065151E375}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5C4C2AF-F0E5-4D48-9F6C-C8065151E375}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5C4C2AF-F0E5-4D48-9F6C-C8065151E375}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4270C803-25BD-4BD6-A734-499156115609}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4270C803-25BD-4BD6-A734-499156115609}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4270C803-25BD-4BD6-A734-499156115609}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4270C803-25BD-4BD6-A734-499156115609}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
