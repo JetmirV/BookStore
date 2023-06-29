@@ -1,3 +1,6 @@
+using Application;
+using Infrastructure;
+
 namespace OrderApi
 {
 	public class Program
@@ -7,6 +10,9 @@ namespace OrderApi
 			var builder = WebApplication.CreateBuilder(args);
 
 			// Add services to the container.
+			builder.Services.AddDatabaseInfrastructureLayer(builder.Configuration);
+			builder.Services.AddCommunicationInfrastructureLayer(builder.Configuration);
+			builder.Services.AddApplicationLayer(builder.Configuration);
 
 			builder.Services.AddControllers();
 			// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -28,7 +34,7 @@ namespace OrderApi
 
 
 			app.MapControllers();
-
+			app.UseCors();
 			app.Run();
 		}
 	}

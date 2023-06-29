@@ -7,7 +7,7 @@ namespace Infrastructure.Communication.Account;
 
 public class AccountCommunicator : IAccountCommunicator
 {
-	private readonly string BaseURL = "https://localhost:44342";
+	private readonly string BaseURL = "https://localhost:44307";
 
 	private readonly IGenericRequestBuilder _genericRequestBuilder;
 
@@ -27,7 +27,7 @@ public class AccountCommunicator : IAccountCommunicator
 		{
 			Body = request,
 			Method = "POST",
-			Url = $"{BaseURL}/api/Order/Insert"
+			Url = $"{BaseURL}/api/Account/Insert"
 		};
 
 		var result = await this._genericRequestBuilder.CreateRequest<AccountResponseDto>(requestModel);

@@ -22,7 +22,7 @@ public class AddressRepo : IAddressRepo
 
 			await _dbContext.SaveChangesAsync();
 
-			var lastInserted = await _dbContext.Addresses.LastAsync();
+			var lastInserted = await _dbContext.Addresses.OrderByDescending(x=>x.Id).FirstOrDefaultAsync();
 
 			return lastInserted.Id;
 		}

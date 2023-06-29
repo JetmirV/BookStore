@@ -7,7 +7,7 @@ namespace Infrastructure.Communication.Cart;
 
 public class CartCommunicator : ICartCommunicator
 {
-	private readonly string BaseURL = "https://localhost:44342";
+	private readonly string BaseURL = "https://localhost:44315";
 
 	private readonly IGenericRequestBuilder _genericRequestBuilder;
 
@@ -27,7 +27,7 @@ public class CartCommunicator : ICartCommunicator
 		{
 			Body = request,
 			Method = "POST",
-			Url = $"{BaseURL}/api/Order/Insert"
+			Url = $"{BaseURL}/api/cart/addtocart"
 		};
 
 		var result = await this._genericRequestBuilder.CreateRequest<String>(requestModel);
@@ -46,7 +46,7 @@ public class CartCommunicator : ICartCommunicator
 		{
 			Body = request,
 			Method = "POST",
-			Url = $"{BaseURL}/api/Order/Insert"
+			Url = $"{BaseURL}/api/cart/removefromcart"
 		};
 
 		var result = await this._genericRequestBuilder.CreateRequest<String>(requestModel);

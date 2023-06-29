@@ -7,7 +7,7 @@ namespace Infrastructure.Communication.Order;
 
 public class OrderCommunicator : IOrderCommunicator
 {
-	private readonly string BaseURL = "https://localhost:44342";
+	private readonly string BaseURL = "https://localhost:44334";
 
 	private readonly IGenericRequestBuilder _genericRequestBuilder;
 

@@ -22,7 +22,7 @@ public class AccountRepo : IAccountRepo
 
 			await _dbContext.SaveChangesAsync();
 
-			var lastInserted = await _dbContext.Addresses.LastAsync();
+			var lastInserted = await _dbContext.Addresses.OrderByDescending(x => x.Id).FirstOrDefaultAsync();
 
 			await _dbContext.AccountLogs.AddAsync(CreateLog(account, lastInserted.Id));
 

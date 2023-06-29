@@ -6,5 +6,7 @@ namespace Application.Interfaces
     {
         Task<List<OrderDto>> GetOrdersByClientId(int clientId);
         Task<bool> InsertOrder(OrderDto order);
-    }
+        Task<List<OrderDto>> GetRentOrders();
+
+	}
 }

@@ -122,4 +122,16 @@ public class OrderService : IOrderService
             return false;
         }
     }
+
+    public async Task<List<OrderDto>> GetRentOrders()
+    {
+        var orders = await _orderRepo.GetAllRentOrders();
+
+        return orders.Select(x => new OrderDto
+        {
+            ClientId = x.ClientId,
+            Status = (OrderStatus)x.Status,
+            CreateDateTime = x.CreateDateTime
+        }).ToList();
+    }
 }

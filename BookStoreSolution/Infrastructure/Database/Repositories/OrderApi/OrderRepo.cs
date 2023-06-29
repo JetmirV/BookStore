@@ -26,6 +26,18 @@ public class OrderRepo : IOrderRepo
 		}
 	}
 
+	public async Task<List<Order>> GetAllRentOrders()
+	{
+		try
+		{
+			return await _dbContext.Orders.Where(x => x.Id > 0 && x.OrderTypeId == 2).ToListAsync();
+		}
+		catch (Exception)
+		{
+			return new List<Order>();
+		}
+	}
+
 	public async Task<Order?> GetOrderById(int id)
 	{
 		try
