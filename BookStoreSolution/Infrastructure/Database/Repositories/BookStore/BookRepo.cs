@@ -27,7 +27,7 @@ public class BookRepo : IBookRepo
 		}
 	}
 
-	public async Task<Book?> GetProductById(int id)
+	public async Task<Book?> GetBookById(int id)
 	{
 		try
 		{

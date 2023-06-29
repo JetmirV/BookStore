@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Services
+namespace Application.Services.BookStore
 {
-	internal class BookStoreService
+	internal class CartService
 	{
 	}
 }
