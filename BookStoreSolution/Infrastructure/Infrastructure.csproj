@@ -8,9 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Communication\" />
-    <Folder Include="Database\Repositories\AccountApi\" />
-    <Folder Include="Database\Repositories\CartApi\" />
-    <Folder Include="Database\Repositories\OrderApi\" />
   </ItemGroup>
 
   <ItemGroup>

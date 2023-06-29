@@ -23,10 +23,10 @@ public static class InfrastructureRegistrationExtensions
 		services.AddDbContextFactory<BookStoreApiDbContext>(
 		options => options.UseSqlServer(configuration["ConnectionStrings:BookStore"]));
 
-		services.AddDbContextFactory<OrderApiDbContext>(
+		services.AddDbContextFactory<Database.DbContexts.OrderApi.CartApiDbContext>(
 		options => options.UseSqlServer(configuration["ConnectionStrings:OrderApi"]));
 
-		services.AddDbContextFactory<CartApiDbContext>(
+		services.AddDbContextFactory<Database.DbContexts.CartApi.CartApiDbContext>(
 		options => options.UseSqlServer(configuration["ConnectionStrings:CartApi"]));
 
 		services.AddDbContextFactory<AccountApiDbContext>(

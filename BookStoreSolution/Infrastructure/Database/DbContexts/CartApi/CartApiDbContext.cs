@@ -18,8 +18,6 @@ public partial class CartApiDbContext : DbContext
 
     public virtual DbSet<CartItem> CartItems { get; set; }
 
-    public virtual DbSet<CartItemLog> CartItemLogs { get; set; }
-
     public virtual DbSet<CartLog> CartLogs { get; set; }
 
     public virtual DbSet<GeneralLog> GeneralLogs { get; set; }
@@ -40,14 +38,6 @@ public partial class CartApiDbContext : DbContext
             entity.HasKey(e => e.Id).HasName("PK__CartItem__3214EC0730414E80");
 
             entity.Property(e => e.CreateDateTime).HasColumnType("datetime");
-            entity.Property(e => e.Price).HasColumnType("decimal(18, 0)");
-        });
-
-        modelBuilder.Entity<CartItemLog>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("PK__CartItem__3214EC0717A693F6");
-
-            entity.Property(e => e.InsertDateTime).HasColumnType("datetime");
             entity.Property(e => e.Price).HasColumnType("decimal(18, 0)");
         });
 

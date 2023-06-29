@@ -3,13 +3,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Database.DbContexts.OrderApi;
 
-public partial class OrderApiDbContext : DbContext
+public partial class CartApiDbContext : DbContext
 {
-    public OrderApiDbContext()
+    public CartApiDbContext()
     {
     }
 
-    public OrderApiDbContext(DbContextOptions<OrderApiDbContext> options)
+    public CartApiDbContext(DbContextOptions<CartApiDbContext> options)
         : base(options)
     {
     }
@@ -19,8 +19,6 @@ public partial class OrderApiDbContext : DbContext
     public virtual DbSet<Order> Orders { get; set; }
 
     public virtual DbSet<OrderItem> OrderItems { get; set; }
-
-    public virtual DbSet<OrderItemLog> OrderItemLogs { get; set; }
 
     public virtual DbSet<OrderLog> OrderLogs { get; set; }
 
@@ -53,14 +51,6 @@ public partial class OrderApiDbContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("PK__OrderIte__3214EC070C9F4837");
 
-            entity.Property(e => e.Price).HasColumnType("decimal(18, 0)");
-        });
-
-        modelBuilder.Entity<OrderItemLog>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("PK__OrderIte__3214EC07C28CAF98");
-
-            entity.Property(e => e.InsertDateTime).HasColumnType("datetime");
             entity.Property(e => e.Price).HasColumnType("decimal(18, 0)");
         });
 
