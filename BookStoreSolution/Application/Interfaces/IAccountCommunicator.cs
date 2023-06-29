@@ -4,5 +4,5 @@ namespace Application.Interfaces;
 
 public interface IAccountCommunicator
 {
-	Task<bool> CreateAccount(AccountRequestDto accountRequest);
+	Task<AccountResponseDto> CreateAccount(AccountRequestDto accountRequest);
 }

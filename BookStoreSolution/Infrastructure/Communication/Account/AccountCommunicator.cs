@@ -16,10 +16,10 @@ public class AccountCommunicator : IAccountCommunicator
 		_genericRequestBuilder = genericRequestBuilder;
 	}
 
-	public async Task<bool> CreateAccount(AccountRequestDto accountRequest)
+	public async Task<AccountResponseDto> CreateAccount(AccountRequestDto accountRequest)
 	{
 		if (accountRequest == null)
-			return false;
+			return new AccountResponse { Status = "Failed" };
 
 		var request = accountRequest.ToAccountRequest();
 
@@ -30,8 +30,8 @@ public class AccountCommunicator : IAccountCommunicator
 			Url = $"{BaseURL}/api/Order/Insert"
 		};
 
-		var result = await this._genericRequestBuilder.CreateRequest<String>(requestModel);
+		var result = await this._genericRequestBuilder.CreateRequest<AccountResponse>(requestModel);
 
-		return Convert.ToBoolean(result);
+		return result;
 	}
 }

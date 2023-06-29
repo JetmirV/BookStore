@@ -27,11 +27,11 @@ public class BookRepo : IBookRepo
 		}
 	}
 
-	public async Task<Book?> GetBookById(int id)
+	public async Task<List<Book>> GetBookByIds(List<int> ids)
 	{
 		try
 		{
-			return await _dbContext.Books.Where(x => x.Id == id).FirstOrDefaultAsync();
+			return await _dbContext.Books.Where(x => ids.Contains(x.Id)).ToListAsync();
 		}
 		catch (Exception ex)
 		{
