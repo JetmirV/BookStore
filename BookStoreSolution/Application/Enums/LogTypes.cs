@@ -3,5 +3,6 @@
 public enum LogTypes
 {
 	Informational,
-	Error
+	Error,
+	ValidationError
 }

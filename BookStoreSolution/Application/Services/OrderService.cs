@@ -5,7 +5,7 @@ using Domain.Entities.OrderApi;
 
 namespace Application.Services;
 
-public class OrderService
+public class OrderService : IOrderService
 {
 	private readonly IOrderRepo _orderRepo;
 	private readonly IOrderItemRepo _orderItemRepo;
@@ -72,7 +72,7 @@ public class OrderService
 		{
 			_generalOrderLog.InsertGeneralLog(LogTypes.Error, $"OrderService threw an exception while getting orders: {ex.Message}");
 			return new List<OrderDto>();
-		}		
+		}
 	}
 
 	public async Task<bool> InsertOrder(OrderDto order)
