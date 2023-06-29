@@ -24,5 +24,6 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build /BookStore.csproj --no-restore
+      working-directory: ./BookStore/BookStore.csproj
     - name: Test
       run: dotnet test --no-build --verbosity normal
