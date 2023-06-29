@@ -15,35 +15,37 @@ public class BookService : IBookService
 		_generalLogRepo = generalLogRepo;
 	}
 
-	public async Task<BookDto> GetProductById(int id)
+	public async Task<ResultDto> GetProductById(int id)
 	{
 		try
 		{
-			if (id == 0) return new BookDto();
+			if (id == 0) return new ErrorResultDto("");
 
-			var product = await this._bookRepo.GetBookById(id);
+			var product = await this._bookRepo.GetBookByIds(new List<int> { id });
 
-			if (product == null) return new BookDto();
+			if (product == null) return new ErrorResultDto("");
 
-			return new BookDto
+			var book = new BookDto
 			{
-				Id = product.Id,
-				Name = product.Name,
-				Description = product.Description ?? string.Empty,
-				Price = product.Price,
-				ImgUrl = product.Picture,
-				Code = product.Code,
-				Quantity = product.Quantity
+				Id = product.FirstOrDefault().Id,
+				Name = product.FirstOrDefault().Name,
+				Description = product.FirstOrDefault().Description ?? string.Empty,
+				Price = product.FirstOrDefault().Price,
+				ImgUrl = product.FirstOrDefault().Picture,
+				Code = product.FirstOrDefault().Code,
+				Quantity = product.FirstOrDefault().Quantity
 			};
+
+			return new SuccessResult(book);
 		}
 		catch (Exception ex)
 		{
 			_generalLogRepo.InsertGeneralLog(LogTypes.Error, $"BookService threw an exception while getting book: {ex.Message}");
-			return new BookDto();
+			return new ErrorResultDto("BookService threw an exception while getting book");
 		}
 	}
 
-	public async Task<List<BookDto>> GetProducts()
+	public async Task<ResultDto> GetProducts()
 	{
 		try
 		{
@@ -68,12 +70,12 @@ public class BookService : IBookService
 				});
 			});
 
-			return productsResult;
+			return new SuccessResult(productsResult);
 		}
 		catch (Exception ex)
 		{
 			_generalLogRepo.InsertGeneralLog(LogTypes.Error, $"BookService threw an exception while getting books: {ex.Message}");
-			return new List<BookDto>();
+			return new ErrorResultDto("BookService threw an exception while getting books");
 		}
 
 	}

@@ -19,7 +19,7 @@ public class AccountCommunicator : IAccountCommunicator
 	public async Task<AccountResponseDto> CreateAccount(AccountRequestDto accountRequest)
 	{
 		if (accountRequest == null)
-			return new AccountResponse { Status = "Failed" };
+			return new AccountResponseDto { Status = "Failed" };
 
 		var request = accountRequest.ToAccountRequest();
 
@@ -30,7 +30,7 @@ public class AccountCommunicator : IAccountCommunicator
 			Url = $"{BaseURL}/api/Order/Insert"
 		};
 
-		var result = await this._genericRequestBuilder.CreateRequest<AccountResponse>(requestModel);
+		var result = await this._genericRequestBuilder.CreateRequest<AccountResponseDto>(requestModel);
 
 		return result;
 	}

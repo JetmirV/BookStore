@@ -1,7 +1,10 @@
-﻿using Infrastructure.Database.DbContexts.AccountApi;
+﻿using Application.Interfaces;
+using Infrastructure.Communication.Account;
+using Infrastructure.Communication.Cart;
+using Infrastructure.Communication.Common;
+using Infrastructure.Communication.Order;
+using Infrastructure.Database.DbContexts.AccountApi;
 using Infrastructure.Database.DbContexts.BookStore;
-using Infrastructure.Database.DbContexts.CartApi;
-using Infrastructure.Database.DbContexts.OrderApi;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -31,6 +34,18 @@ public static class InfrastructureRegistrationExtensions
 
 		services.AddDbContextFactory<AccountApiDbContext>(
 		options => options.UseSqlServer(configuration["ConnectionStrings:AccountApi"]));
+
+		return services;
+	}
+
+	public static IServiceCollection AddCommunicationInfrastructureLayer(this IServiceCollection services, IConfiguration config)
+	{
+		services.AddSingleton(typeof(IGenericRequestBuilder), typeof(GenericRequestBuilder));
+		services.AddSingleton<IOrderCommunicator, OrderCommunicator>();
+		services.AddSingleton<IAccountCommunicator, AccountCommunicator>();
+		services.AddSingleton<ICartCommunicator, CartCommunicator>();
+
+		services.AddHttpClient<IGenericRequestBuilder, GenericRequestBuilder>();
 
 		return services;
 	}
