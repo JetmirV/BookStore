@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using Domain.Entities.OrderApi;
+﻿using Domain.Entities.OrderApi;
 using Microsoft.EntityFrameworkCore;
 
-namespace Domain;
+namespace Infrastructure.Database.DbContexts.OrderApi;
 
 public partial class OrderApiDbContext : DbContext
 {
@@ -27,10 +25,6 @@ public partial class OrderApiDbContext : DbContext
     public virtual DbSet<OrderLog> OrderLogs { get; set; }
 
     public virtual DbSet<OrderType> OrderTypes { get; set; }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=BCKLAP-BCHRML3;Database=OrderApiDb;User Id=BUCKAROO\\\\\\\\j.veselaj;Trusted_Connection=SSPI;Encrypt=false;TrustServerCertificate=true");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
