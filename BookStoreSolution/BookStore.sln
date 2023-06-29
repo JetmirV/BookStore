@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{B5C4C2AF-F0E5-4D48-9F6C-C8065151E375}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountApi", "AccountApi\AccountApi.csproj", "{4270C803-25BD-4BD6-A734-499156115609}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccountApi", "AccountApi\AccountApi.csproj", "{4270C803-25BD-4BD6-A734-499156115609}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{91C1198C-C8A6-4575-905A-45AA3C4606EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{4270C803-25BD-4BD6-A734-499156115609}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4270C803-25BD-4BD6-A734-499156115609}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4270C803-25BD-4BD6-A734-499156115609}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91C1198C-C8A6-4575-905A-45AA3C4606EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91C1198C-C8A6-4575-905A-45AA3C4606EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91C1198C-C8A6-4575-905A-45AA3C4606EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91C1198C-C8A6-4575-905A-45AA3C4606EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,5 +1,6 @@
 namespace BookStore;
 using Application;
+using BookStore.CustomeExceptionsMiddleware;
 using Infrastructure;
 
 public class Program
@@ -26,6 +27,8 @@ public class Program
 			app.UseSwagger();
 			app.UseSwaggerUI();
 		}
+
+		app.UseMiddleware<ExceptionMiddleware>();
 
 		app.UseHttpsRedirection();
 
