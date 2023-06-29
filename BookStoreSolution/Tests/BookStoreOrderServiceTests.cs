@@ -1,14 +1,7 @@
 ﻿using Application.DTOs;
 using Application.Interfaces;
 using Application.Services.BookStore;
-using Domain.Entities.BookStore;
-using Domain.Entities.OrderApi;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Tests
 {
