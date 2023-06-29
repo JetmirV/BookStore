@@ -45,7 +45,7 @@ public class OrderService : IOrderService
                 var items = new List<OrderItemDto>();
                 orderItemsDictionary.TryGetValue(x.Id, out var orderItems);
 
-                orderItems.ForEach(x =>
+                orderItems?.ForEach(x =>
                 {
                     items.Add(new OrderItemDto
                     {
@@ -83,7 +83,7 @@ public class OrderService : IOrderService
 
             if (order.OrderItems.Count == 0) return false;
 
-            var orderType = _orderTypeRepo.GetOrderTypeByName(order.OrderType.ToString());
+            var orderType = await _orderTypeRepo.GetOrderTypeByName(order.OrderType.ToString());
 
             var orderToInsert = new Domain.Entities.OrderApi.Order
             {

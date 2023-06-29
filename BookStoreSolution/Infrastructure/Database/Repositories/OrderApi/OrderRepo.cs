@@ -70,9 +70,9 @@ public class OrderRepo : IOrderRepo
 
 			var result = await _dbContext.SaveChangesAsync() > 0;
 
-			var lastItemInserted = _dbContext.Orders.Last().Id;
+			var lastItemInserted = _dbContext.Orders.OrderByDescending(x=>x.Id).FirstOrDefaultAsync();
 
-			await _dbContext.OrderLogs.AddAsync(CreateLog(order, lastItemInserted));
+			await _dbContext.OrderLogs.AddAsync(CreateLog(order, lastItemInserted.Id));
 
 			await _dbContext.SaveChangesAsync();
 
