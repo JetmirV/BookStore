@@ -1,8 +1,8 @@
-﻿using Domain.Entities.BookStore;
+﻿using Application.Enums;
 
 namespace Application.Interfaces;
 
 public interface IGeneralLogRepo
 {
-	void InsertGeneralLog(GeneralLog log);
+	void InsertGeneralLog(LogTypes logType, string logData);
 }

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Domain.Entities.OrderApi;
+﻿namespace Domain.Entities.OrderApi;
 
 public partial class Order
 {
@@ -10,6 +7,8 @@ public partial class Order
     public int Status { get; set; }
 
     public int ClientId { get; set; }
+
+    public int OrderTypeId { get; set; }
 
     public DateTime CreateDateTime { get; set; }
 

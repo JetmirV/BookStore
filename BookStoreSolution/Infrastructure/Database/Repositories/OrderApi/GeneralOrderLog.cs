@@ -1,4 +1,5 @@
-﻿using Application.Interfaces;
+﻿using Application.Enums;
+using Application.Interfaces;
 using Domain.Entities.OrderApi;
 using Infrastructure.Database.DbContexts.OrderApi;
 
@@ -13,8 +14,15 @@ public class GeneralOrderLog : IGeneralOrderLog
 		_dbContext = dbContext;
 	}
 
-	public async void InsertGeneralLog(GeneralLog log)
+	public async void InsertGeneralLog(LogTypes logType, string logData)
 	{
+		var log = new GeneralLog
+		{
+			LogType = logType.ToString(),
+			LogData = logData,
+			InsertDateTime = DateTime.Now,
+		};
+
 		await _dbContext.GeneralLogs.AddAsync(log);
 	}
 }

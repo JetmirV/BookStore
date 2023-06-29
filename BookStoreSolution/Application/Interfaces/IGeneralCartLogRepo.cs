@@ -1,8 +1,8 @@
-﻿using Domain.Entities.CartApi;
+﻿using Application.Enums;
 
 namespace Application.Interfaces;
 
 public interface IGeneralCartLogRepo
 {
-	void InsertGeneralLog(GeneralLog log);
+	void InsertGeneralLog(LogTypes logType, string logData);
 }

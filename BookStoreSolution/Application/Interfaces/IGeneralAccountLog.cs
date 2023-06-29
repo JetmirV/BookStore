@@ -1,8 +1,8 @@
-﻿using Domain.Entities.AccountApi;
+﻿using Application.Enums;
 
 namespace Application.Interfaces;
 
 public interface IGeneralAccountLog
 {
-	void InsertGeneralLog(GeneralLog log);
+	void InsertGeneralLog(LogTypes logType, string logData);
 }

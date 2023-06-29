@@ -1,8 +1,8 @@
-﻿using Domain.Entities.OrderApi;
+﻿using Application.Enums;
 
 namespace Application.Interfaces;
 
 public interface IGeneralOrderLog
 {
-	void InsertGeneralLog(GeneralLog log);
+	void InsertGeneralLog(LogTypes logType, string logData);
 }
